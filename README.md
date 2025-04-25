@@ -26,4 +26,4 @@
 - **Report Writing**: Develop skills in writing clear and effective vulnerability reports. This includes detailing the steps to reproduce the issue, the impact, and potential mitigations.
 - **Capture the Flag (CTF) Challenges**: Practice your skills through CTF challenges, which simulate real-world hacking scenarios.
 
-[Sec+](https://github.com/Treyking55/Readme/commit/e0f6c67da271256424bb28238afab008fdf13604)
+[Sec+ Certified](https://github.com/Treyking55/Readme/commit/e0f6c67da271256424bb28238afab008fdf13604)

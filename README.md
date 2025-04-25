@@ -26,4 +26,4 @@
 - **Report Writing**: Develop skills in writing clear and effective vulnerability reports. This includes detailing the steps to reproduce the issue, the impact, and potential mitigations.
 - **Capture the Flag (CTF) Challenges**: Practice your skills through CTF challenges, which simulate real-world hacking scenarios.
 
-![SEC+ Certification] `./CompTIA%20Security+%20ce%20certificate.pdf`
+SEC+ Certified `./CompTIA%20Security+%20ce%20certificate.pdf`

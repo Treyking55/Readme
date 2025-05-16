@@ -12,7 +12,7 @@
 7. **Monitoring Logs**: Regularly checking the event logs for any unusual activity, this can help you detect potential security issues early.
 8. **Network Segmentation**: segmenting my network to isolate my AD server from other devices. This adds an extra layer of protection.
 
-## Hacker101 12/26 points
+## Hacker101 26/26 points
 
 ### Level 1: Introduction to Web Hacking
 - **Understanding Web Applications**: Learn the basics of how web applications work, including HTTP requests and responses, cookies, sessions, and authentication mechanisms.

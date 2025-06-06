@@ -28,30 +28,25 @@
 
 ## Certifications
 
-## AWS Cloud Practitioner Certified
+☁️ Credential Earned: AWS Cloud Quest: Cloud Practitioner
 
-!AWS Certified Cloud Practitioner!
+📜 Issuer: Amazon Web Services (AWS)
 
-I EARNED MY AWS CLOUD PRACTITIONER CERTIFICATION IN 2025, GAINING A STRONG FOUNDATION IN CLOUD COMPUTING CONCEPTS, AWS CORE SERVICES, SECURITY, AND PRICING MODELS. I COMPLETED THE AWS CLOUD QUEST: CLOUD PRACTITIONER – A GAME-BASED LEARNING EXPERIENCE THAT SIMULATED REAL-WORLD CLOUD SCENARIOS AND SOLUTIONS.
+🔗 Credential URL: [View Badge on Credly](https://www.credly.com/badges/01a52309-8139-4723-b74e-b89c9476e09a/public_url)
 
-### AWS KNOWLEDGE AREAS
-1. **Cloud Concepts**: UNDERSTANDING OF CLOUD COMPUTING PRINCIPLES AND AWS GLOBAL INFRASTRUCTURE.
-2. **Security and Compliance**: BASIC KNOWLEDGE OF AWS SHARED RESPONSIBILITY MODEL, IAM, AND DATA PROTECTION.
-3. **Technology**: FAMILIARITY WITH CORE AWS SERVICES LIKE EC2, S3, RDS, AND LAMBDA.
-4. **Billing and Pricing**: UNDERSTANDING OF AWS PRICING MODELS, BILLING TOOLS, AND COST OPTIMIZATION STRATEGIES.
+📅 Issued: [06/05/2025]
 
-[AWS Certified Cloud Practitioner] [https://www.credly.com/badges/01a52309-8139-4723-b74e-b89c9476e09a/public_url]
+Description:
+This badge recognizes foundational knowledge of AWS Cloud concepts and hands-on experience in building cloud solutions. Earners have demonstrated skills in compute, networking, databases, and security services through interactive learning and solution-building assignments aligned with the Cloud Practitioner role.
 
-!CompTIA Security+!
+🛡️ Credential Earned: CompTIA Security+
 
-I EARNED MY COMPTIA SECURITY+ CERTIFICATION IN 2025, DEMONSTRATING MY UNDERSTANDING OF CORE CYBERSECURITY PRINCIPLES INCLUDING NETWORK SECURITY, RISK MANAGEMENT, THREAT DETECTION, AND INCIDENT RESPONSE. THIS CERTIFICATION VALIDATES MY ABILITY TO IDENTIFY AND MITIGATE SECURITY RISKS IN MODERN IT ENVIRONMENTS.
+📜 Issuer: CompTIA
 
-### SECURITY+ KNOWLEDGE AREAS
-1. **Threats, Attacks & Vulnerabilities**: UNDERSTANDING OF MALWARE, SOCIAL ENGINEERING, AND APPLICATION ATTACKS.
-2. **Architecture & Design**: KNOWLEDGE OF SECURE NETWORK ARCHITECTURE, CLOUD SECURITY, AND SYSTEM DESIGN PRINCIPLES.
-3. **Implementation**: HANDS-ON EXPERIENCE WITH SECURE PROTOCOLS, WIRELESS SECURITY, AND IDENTITY AND ACCESS MANAGEMENT (IAM).
-4. **Operations & Incident Response**: ABILITY TO DETECT, RESPOND TO, AND RECOVER FROM SECURITY INCIDENTS.
-5. **Governance, Risk & Compliance**: FAMILIARITY WITH RISK MANAGEMENT FRAMEWORKS, POLICIES, AND REGULATIONS.
+🔗 Credential URL: [View Badge on Credly](https://www.credly.com/badges/d45c4390-8417-42f7-ad7f-e62afc7c92b1/public_url)
 
-[Sec+ Certified] (https://www.credly.com/badges/d45c4390-8417-42f7-ad7f-e62afc7c92b1/public_url)
+📅 Issued: [05/11/2024]
+
+Description:
+The CompTIA Security+ certification validates baseline skills necessary to perform core security functions and pursue an IT security career. It covers essential principles for network security and risk management, including threat analysis, incident response, architecture and design, governance, compliance, and cryptography.
 

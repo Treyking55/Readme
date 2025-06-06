@@ -42,7 +42,7 @@ I EARNED MY AWS CLOUD PRACTITIONER CERTIFICATION IN 2025, GAINING A STRONG FOUND
 3. **Technology**: FAMILIARITY WITH CORE AWS SERVICES LIKE EC2, S3, RDS, AND LAMBDA.
 4. **Billing and Pricing**: UNDERSTANDING OF AWS PRICING MODELS, BILLING TOOLS, AND COST OPTIMIZATION STRATEGIES.
 
-[AWS Certified Cloud Practitioner](https://github.comertified
+[AWS Certified Cloud Practitioner] https://www.credly.com/badges/01a52309-8139-4723-b74e-b89c9476e09a/public_url
 
 !CompTIA Security+
 
@@ -55,5 +55,5 @@ I EARNED MY COMPTIA SECURITY+ CERTIFICATION IN 2025, DEMONSTRATING MY UNDERSTAND
 4. **Operations & Incident Response**: ABILITY TO DETECT, RESPOND TO, AND RECOVER FROM SECURITY INCIDENTS.
 5. **Governance, Risk & Compliance**: FAMILIARITY WITH RISK MANAGEMENT FRAMEWORKS, POLICIES, AND REGULATIONS.
 
-[Sec+ Certified](https://github.com/Treyking55
+[Sec+ Certified]([https://github.com/Treyking55](https://www.credly.com/badges/d45c4390-8417-42f7-ad7f-e62afc7c92b1/public_url)
 

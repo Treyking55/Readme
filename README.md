@@ -1,3 +1,26 @@
+## Certifications
+
+☁️ Credential Earned: AWS Cloud Quest: Cloud Practitioner
+
+📜 Issuer: Amazon Web Services (AWS)
+
+🔗 Credential URL: [View Badge on Credly](https://www.credly.com/badges/01a52309-8139-4723-b74e-b89c9476e09a/public_url)
+
+📅 Issued: [06/05/2025]
+
+Description:
+This badge recognizes foundational knowledge of AWS Cloud concepts and hands-on experience in building cloud solutions. Earners have demonstrated skills in compute, networking, databases, and security services through interactive learning and solution-building assignments aligned with the Cloud Practitioner role.
+
+🛡️ Credential Earned: CompTIA Security+
+
+📜 Issuer: CompTIA
+
+🔗 Credential URL: [View Badge on Credly](https://www.credly.com/badges/d45c4390-8417-42f7-ad7f-e62afc7c92b1/public_url)
+
+📅 Issued: [05/11/2024]
+
+Description:
+The CompTIA Security+ certification validates baseline skills necessary to perform core security functions and pursue an IT security career. It covers essential principles for network security and risk management, including threat analysis, incident response, architecture and design, governance, compliance, and cryptography.
 # Home Lab Projects
 
  I WAS ABLE TO IMPLEMENT SERVER TECHNOLOGY ON MY HOME MACHINE CREATING AND MAINTAINING MY OWN ACTIVE DIRECTORY IMPLEMENTING BASIC SECURITY MEASURES AND I PLAN TO ADD A SIEM AND LEARN SECURITY OPERATIONS MANAGEMENT SKILLS AND ADVANCE MY IT KNOWLEDGE
@@ -25,28 +48,4 @@
 - **Automated Tools**: Learn to use automated tools and scanners to identify vulnerabilities more efficiently.
 - **Report Writing**: Develop skills in writing clear and effective vulnerability reports. This includes detailing the steps to reproduce the issue, the impact, and potential mitigations.
 - **Capture the Flag (CTF) Challenges**: Practice your skills through CTF challenges, which simulate real-world hacking scenarios.
-
-## Certifications
-
-☁️ Credential Earned: AWS Cloud Quest: Cloud Practitioner
-
-📜 Issuer: Amazon Web Services (AWS)
-
-🔗 Credential URL: [View Badge on Credly](https://www.credly.com/badges/01a52309-8139-4723-b74e-b89c9476e09a/public_url)
-
-📅 Issued: [06/05/2025]
-
-Description:
-This badge recognizes foundational knowledge of AWS Cloud concepts and hands-on experience in building cloud solutions. Earners have demonstrated skills in compute, networking, databases, and security services through interactive learning and solution-building assignments aligned with the Cloud Practitioner role.
-
-🛡️ Credential Earned: CompTIA Security+
-
-📜 Issuer: CompTIA
-
-🔗 Credential URL: [View Badge on Credly](https://www.credly.com/badges/d45c4390-8417-42f7-ad7f-e62afc7c92b1/public_url)
-
-📅 Issued: [05/11/2024]
-
-Description:
-The CompTIA Security+ certification validates baseline skills necessary to perform core security functions and pursue an IT security career. It covers essential principles for network security and risk management, including threat analysis, incident response, architecture and design, governance, compliance, and cryptography.
 

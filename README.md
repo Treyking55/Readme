@@ -55,5 +55,5 @@ I EARNED MY COMPTIA SECURITY+ CERTIFICATION IN 2025, DEMONSTRATING MY UNDERSTAND
 4. **Operations & Incident Response**: ABILITY TO DETECT, RESPOND TO, AND RECOVER FROM SECURITY INCIDENTS.
 5. **Governance, Risk & Compliance**: FAMILIARITY WITH RISK MANAGEMENT FRAMEWORKS, POLICIES, AND REGULATIONS.
 
-[Sec+ Certified] ([Credly])(https://www.credly.com/badges/d45c4390-8417-42f7-ad7f-e62afc7c92b1/public_url)
+[Sec+ Certified] (https://www.credly.com/badges/d45c4390-8417-42f7-ad7f-e62afc7c92b1/public_url)
 

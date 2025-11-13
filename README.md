@@ -50,50 +50,38 @@ The CompTIA Security+ certification validates baseline skills necessary to perfo
 - **Capture the Flag (CTF) Challenges**: Practice your skills through CTF challenges, which simulate real-world hacking scenarios.
 
 ### ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Cisco Firewall → Router → Switch Setup
-This guide documents a basic network with a firewall in front of the router, then a switch for LAN distribution. It covers:
+I recently completed a network deployment where I placed a firewall in front of a Cisco router, which then connects to a switch for LAN distribution. Below are the steps I took, including configurations for each device and verification commands.
 
-Physical connectivity
-Firewall, router, and switch configuration
-Management IP, default gateway, DHCP, and SSH
-Verification and saving config
-
-
-Assumptions
-
-Firewall external (WAN) → ISP
-Firewall internal (LAN) → Router WAN interface
-Router LAN → Switch
-LAN subnet: 192.168.1.0/24
-Firewall LAN IP: 192.168.0.1
-Router WAN IP: 192.168.0.2
-Router LAN IP: 192.168.1.1
-Switch management IP: 192.168.1.2
-
-
-
-Topology
+✅ Topology
 [ ISP ] --- [ Firewall ] --- [ Router ] --- [ Switch ] --- [ PCs ]
              WAN: Public IP    WAN: 192.168.0.2
              LAN: 192.168.0.1  LAN: 192.168.1.1
 
 
-1) Physical Setup
+Firewall LAN IP: 192.168.0.1
+Router WAN IP: 192.168.0.2
+Router LAN IP: 192.168.1.1
+Switch Management IP: 192.168.1.2
+LAN Subnet: 192.168.1.0/24
 
-Connect Firewall LAN to Router WAN.
-Connect Router LAN to Switch uplink port.
-Connect PCs to switch access ports.
-Console into each device for configuration.
+
+🔹 Steps I Took
+1) Physical Connections
+
+Connected Firewall LAN to Router WAN.
+Connected Router LAN to Switch uplink port.
+Connected PCs to switch access ports.
+Used console cables and PuTTY for CLI access.
 
 
-2) Firewall Configuration (Example: Cisco ASA or similar)
-Plain Textenableconfigure terminal! Set hostnamehostname Firewall! Configure inside and outside interfacesinterface GigabitEthernet0/0 nameif outside security-level 0 ip address <PUBLIC_IP> <SUBNET_MASK> no shutdowninterface GigabitEthernet0/1 nameif inside security-level 100 ip address 192.168.0.1 255.255.255.0 no shutdown! Enable NAT for inside to outsidenat (inside,outside) dynamic interface! Default route to ISProute outside 0.0.0.0 0.0.0.0 <ISP_GATEWAY>! (Optional) DHCP for router WANdhcpd address 192.168.0.2-192.168.0.10 insidedhcpd enable inside! Save configwrite memoryShow more lines
+2) Firewall Configuration (Cisco ASA Example)
+Plain Textenableconfigure terminalhostname Firewallinterface GigabitEthernet0/0 nameif outside security-level 0 ip address <PUBLIC_IP> <SUBNET_MASK> no shutdowninterface GigabitEthernet0/1 nameif inside security-level 100 ip address 192.168.0.1 255.255.255.0 no shutdownnat (inside,outside) dynamic interfaceroute outside 0.0.0.0 0.0.0.0 <ISP_GATEWAY>! DHCP for router WANdhcpd address 192.168.0.2-192.168.0.10 insidedhcpd enable insidewrite memoryShow more lines
 
 3) Router Configuration
-Plain Textenableconfigure terminalhostname Routerenable secret <STRONG_SECRET_PASSWORD>! WAN interface (to Firewall)interface GigabitEthernet0/0 description WAN to Firewall ip address 192.168.0.2 255.255.255.0 no shutdown! LAN interface (to Switch)interface GigabitEthernet0/1 description LAN to Switch ip address 192.168.1.1 255.255.255.0 no shutdown! Default route to Firewallip route 0.0.0.0 0.0.0.0 192.168.0.1! DHCP for LANip dhcp excluded-address 192.168.1.1 192.168.1.20ip dhcp pool LAN network 192.168.1.0 255.255.255.0 default-router 192.168.1.1 dns-server 8.8.8.8 1.1.1.1! SSH setupip domain-name example.localcrypto key generate rsa modulus 2048username admin privilege 15 secret <STRONG_ADMIN_PASSWORD>line vty 0 4 transport input ssh login localendwrite memoryShow more lines
+Plain Textenableconfigure terminalhostname Routerenable secret <STRONG_SECRET_PASSWORD>interface GigabitEthernet0/0 description WAN to Firewall ip address 192.168.0.2 255.255.255.0 no shutdowninterface GigabitEthernet0/1 description LAN to Switch ip address 192.168.1.1 255.255.255.0 no shutdownip route 0.0.0.0 0.0.0.0 192.168.0.1ip dhcp excluded-address 192.168.1.1 192.168.1.20ip dhcp pool LAN network 192.168.1.0 255.255.255.0 default-router 192.168.1.1 dns-server 8.8.8.8 1.1.1.1ip domain-name example.localcrypto key generate rsa modulus 2048username admin privilege 15 secret <STRONG_ADMIN_PASSWORD>line vty 0 4 transport input ssh login localendwrite memoryShow more lines
 
 4) Switch Configuration
-Plain Textenableconfigure terminalhostname Switch! Management IPinterface vlan 1 ip address 192.168.1.2 255.255.255.0 no shutdown! Default gatewayip default-gateway 192.168.1.1! Uplink portinterface GigabitEthernet0/1 description Uplink to Router switchport mode access switchport access vlan 1 spanning-tree portfast no shutdown! Access portsinterface range GigabitEthernet0/2 - 0/10 switchport mode access switchport access vlan 1 spanning-tree portfast no shutdownendwrite memoryShow more lines
+Plain Textenableconfigure terminalhostname Switchinterface vlan 1 ip address 192.168.1.2 255.255.255.0 no shutdownip default-gateway 192.168.1.1interface GigabitEthernet0/1 description Uplink to Router switchport mode access switchport access vlan 1 spanning-tree portfast no shutdowninterface range GigabitEthernet0/2 - 0/10 switchport mode access switchport access vlan 1 spanning-tree portfast no shutdownendwrite memoryShow more lines
 
 5) Testing
 
@@ -109,10 +97,9 @@ From PC:
 
 Plain Textping 192.168.1.1   ! Routerping 8.8.8.8       ! InternetShow more lines
 
-6) Security Best Practices
+6) Security Best Practices I Applied
 
-Use strong passwords and SSH only.
-Apply ACLs on Firewall for inbound traffic.
-Disable unused switch ports and enable port security.
-Regularly update firmware and back up configs.
-
+Strong passwords and SSH only.
+ACLs on Firewall for inbound traffic.
+Disabled unused switch ports and enabled port security.
+Regular firmware updates and config backups.

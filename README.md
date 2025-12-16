@@ -57,49 +57,36 @@ I recently completed a network deployment where I placed a firewall in front of 
              WAN: Public IP    WAN: 192.168.0.2
              LAN: 192.168.0.1  LAN: 192.168.1.1
 
+1. Physical Connections
 
-Firewall LAN IP: 192.168.0.1
-Router WAN IP: 192.168.0.2
-Router LAN IP: 192.168.1.1
-Switch Management IP: 192.168.1.2
-LAN Subnet: 192.168.1.0/24
-
-
-🔹 Steps I Took
-1) Physical Connections
-
-Connected Firewall LAN to Router WAN.
-Connected Router LAN to Switch uplink port.
-Connected PCs to switch access ports.
-Used console cables and PuTTY for CLI access.
+SonicWall X0 → Router FastEthernet0/0
+Router FastEthernet0/1 → Switch uplink
+PCs → Switch access ports
 
 
-2) Firewall Configuration (Cisco ASA Example)
-Plain Textenableconfigure terminalhostname Firewallinterface GigabitEthernet0/0 nameif outside security-level 0 ip address <PUBLIC_IP> <SUBNET_MASK> no shutdowninterface GigabitEthernet0/1 nameif inside security-level 100 ip address 192.168.0.1 255.255.255.0 no shutdownnat (inside,outside) dynamic interfaceroute outside 0.0.0.0 0.0.0.0 <ISP_GATEWAY>! DHCP for router WANdhcpd address 192.168.0.2-192.168.0.10 insidedhcpd enable insidewrite memoryShow more lines
+2. SonicWall Firewall (GUI)
 
-3) Router Configuration
-Plain Textenableconfigure terminalhostname Routerenable secret <STRONG_SECRET_PASSWORD>interface GigabitEthernet0/0 description WAN to Firewall ip address 192.168.0.2 255.255.255.0 no shutdowninterface GigabitEthernet0/1 description LAN to Switch ip address 192.168.1.1 255.255.255.0 no shutdownip route 0.0.0.0 0.0.0.0 192.168.0.1ip dhcp excluded-address 192.168.1.1 192.168.1.20ip dhcp pool LAN network 192.168.1.0 255.255.255.0 default-router 192.168.1.1 dns-server 8.8.8.8 1.1.1.1ip domain-name example.localcrypto key generate rsa modulus 2048username admin privilege 15 secret <STRONG_ADMIN_PASSWORD>line vty 0 4 transport input ssh login localendwrite memoryShow more lines
+LAN (X0): 192.168.0.1/24
+WAN (X1): ISP IP or DHCP
+Default Route: 0.0.0.0/0 → ISP Gateway
+NAT: LAN→WAN (auto)
+Access Rule: Allow LAN→WAN
+DHCP: Optional for 192.168.0.x (or disable if router uses static)
 
-4) Switch Configuration
-Plain Textenableconfigure terminalhostname Switchinterface vlan 1 ip address 192.168.1.2 255.255.255.0 no shutdownip default-gateway 192.168.1.1interface GigabitEthernet0/1 description Uplink to Router switchport mode access switchport access vlan 1 spanning-tree portfast no shutdowninterface range GigabitEthernet0/2 - 0/10 switchport mode access switchport access vlan 1 spanning-tree portfast no shutdownendwrite memoryShow more lines
 
-5) Testing
+3. Cisco 1700 Router
+Plain Textenableconfigure terminalhostname Routerenable secret <PASSWORD>!interface FastEthernet0/0 ip address 192.168.0.2 255.255.255.0 no shutdown!interface FastEthernet0/1 ip address 192.168.1.1 255.255.255.0 no shutdown!ip route 0.0.0.0 0.0.0.0 192.168.0.1!ip dhcp excluded-address 192.168.1.1 192.168.1.20ip dhcp pool LAN network 192.168.1.0 255.255.255.0 default-router 192.168.1.1 dns-server 8.8.8.8 1.1.1.1!write memory``Show more lines
 
-From Router:
+4. Switch
+Plain Textinterface vlan 1 ip address 192.168.1.2 255.255.255.0 no shutdownip default-gateway 192.168.1.1!interface FastEthernet0/1 switchport mode access switch switchport access vlan 1Show more lines
 
-Plain Textping 192.168.0.1   ! Firewallping 192.168.1.2   ! SwitchShow more lines
+5. Testing
+Plain TextRouter: ping 192.168.0.1, ping 8.8.8.8Switch: ping 192.168.1.1PC: ping 192.168.1.1, pingShow more lines
 
-From Switch:
+6. Security Best Practices
 
-Plain Textping 192.168.1.1   ! RouterShow more lines
-
-From PC:
-
-Plain Textping 192.168.1.1   ! Routerping 8.8.8.8       ! InternetShow more lines
-
-6) Security Best Practices I Applied
-
-Strong passwords and SSH only.
-ACLs on Firewall for inbound traffic.
-Disabled unused switch ports and enabled port security.
-Regular firmware updates and config backups.
+Change all default passwords
+Restrict management to LAN
+Enable SSH on router
+Disable unused switch ports
+Backup configs
